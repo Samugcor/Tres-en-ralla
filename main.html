@@ -5,15 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tres en ralla</title>
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="nombrespopup" class="backgroundmensaje">
         <div class="containermensaje">
 
-            <label for="jugador1">Jugador 1:</label>
+            <label class="color1" for="jugador1"><b>Jugador 1:</b></label>
             <input type="text" id="jugador1" name="jugador1">
 
-            <label for="jugador2">Jugador 2:</label>
+            <label class="color2" for="jugador2"><b>Jugador 2:</b></label>
             <input type="text" id="jugador2" name="jugador2">
 
             <button id="start" class="restartboton">Start Game</button>
@@ -21,8 +25,9 @@
     </div>
 
     <div id="head">
-        <h1 id="j1">Jugador 1</h1>
-        <h1 id="j2">Jugador 2</h1>
+        <h1 id="j1" class="color1">Jugador 1</h1>
+        <div class="vscontainer"><img src="Imagenes/V__1_-removebg-preview.png" alt=""></div>
+        <h1 id="j2" class="color2">Jugador 2</h1>
     </div>
     <div id="grid">
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
@@ -37,9 +42,9 @@
 
     </div>
 
-    <div class="backgroundmensaje">
+    <div id="winerpopup" class="backgroundmensaje">
         <div class="containermensaje">
-            <h2>Winner!</h2>
+            <h2 id="felicitaciones">Enhorabuena!</h2>
             <p id="mensaje"></p>
             <button class="restartboton">Restart</button>
         </div>
