@@ -92,7 +92,7 @@ color: red;
 #mensaje{
     text-align: center;
 }
-.restartboton{
+button{
     border: none;
     border-radius: 15px;
 
@@ -108,11 +108,11 @@ color: red;
     align-items: center;
     cursor: pointer;
 }
-.restartboton:hover{
+button:hover{
     transition: 0.5s;
     background-color:rgb(11, 167, 229);
 }
-.restartboton:active{
+button:active{
     transition: none;
     background-color: #ee2192;
 }

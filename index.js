@@ -1,49 +1,12 @@
 let jugador1;
 let jugador2;
 let turno = 1;
+let tablero = [[null,null,null],[null,null,null],[null,null,null]];
 
 $(document).ready(function() {
-
-    $('#nombrespopup').css('display', 'flex');
-
-    $('#start').click(function() {
-        jugador1 = $('#jugador1').val();
-        jugador2 = $('#jugador2').val();
-        
-        $('#j1').text(jugador1);
-        $('#j2').text(jugador2);
-
-        // Hide the name input modal
-        $('#nombrespopup').css('display', 'none');
-    });
-
-    let tablero = [[null,null,null],[null,null,null],[null,null,null]];
-    
-
-    $(".imgcontainer").click(function() {
-        if ($(this).children('img').attr('src') === 'Imagenes/white.svg') {
-            let index = $(this).index();
-
-            let rowIndex = Math.floor(index / 3);
-            let cellIndex = index % 3;
-
-            if (turno % 2 !== 0) {
-                $(this).children('img').attr('src',"Imagenes/x.svg");
-                tablero[rowIndex][cellIndex] = 'X';
-            } else {
-                $(this).children('img').attr('src',"Imagenes/circle.svg");
-                tablero[rowIndex][cellIndex] = 'O';
-            }
-
-            turno++;
-            setTimeout(function() {
-                checkWin(tablero);
-            }, 100);
-        }
-    });
-
+    //FUNCIONES
     function checkWin(tablero) {
-        // Check rows
+      
         for (let i = 0; i < 3; i++) {
             if (tablero[i][0] !== null && tablero[i][0] === tablero[i][1] && tablero[i][0] === tablero[i][2]) {
 
@@ -58,7 +21,7 @@ $(document).ready(function() {
             }
         }
 
-        // Check columns
+      
         for (let j = 0; j < 3; j++) {
             if (tablero[0][j] !== null && tablero[0][j] === tablero[1][j] && tablero[0][j] === tablero[2][j]) {
                 if (tablero[0][j]=="X") {
@@ -72,7 +35,7 @@ $(document).ready(function() {
             }
         }
 
-        // Check diagonals
+      
         if ((tablero[0][0] !== null && tablero[0][0] === tablero[1][1] && tablero[0][0] === tablero[2][2]) ||
             (tablero[0][2] !== null && tablero[0][2] === tablero[1][1] && tablero[0][2] === tablero[2][0])) {
 
@@ -84,7 +47,7 @@ $(document).ready(function() {
             return;
         }
 
-        // Check for draw
+      
         let draw = true;
         for (let i = 0; i < 3; i++) {
             for (let j = 0; j < 3; j++) {
@@ -111,16 +74,57 @@ $(document).ready(function() {
         $("#winerpopup").css("display", "flex");
         $("#mensaje").text("Es un empate!");
     }
+    function resetGame() {
+        $(".imgcontainer").children('img').attr('src',"Imagenes/white.svg");
+        $('#nombrespopup').css('display', 'flex');
+        tablero = [[null,null,null],[null,null,null],[null,null,null]];
+        turno = 1;
+    }
 
-    // Close the popup when the user clicks on the close button
+    //Set pop up nombres
+    $('#nombrespopup').css('display', 'flex');
+
+    $('#start').click(function() {
+        jugador1 = $('#jugador1').val();
+        jugador2 = $('#jugador2').val();
+        
+        $('#j1').text(jugador1);
+        $('#j2').text(jugador2);
+
+       
+        $('#nombrespopup').css('display', 'none');
+    });
+
+    //Juego
+
+    $(".imgcontainer").click(function() {
+        if ($(this).children('img').attr('src') === 'Imagenes/white.svg') {
+            let index = $(this).index();
+
+            let rowIndex = Math.floor(index / 3);
+            let cellIndex = index % 3;
+
+            if (turno % 2 !== 0) {
+                $(this).children('img').attr('src',"Imagenes/x.svg");
+                tablero[rowIndex][cellIndex] = 'X';
+            } else {
+                $(this).children('img').attr('src',"Imagenes/circle.svg");
+                tablero[rowIndex][cellIndex] = 'O';
+            }
+
+            turno++;
+            setTimeout(function() {
+                checkWin(tablero);
+            }, 100);
+        }
+    });
+
+    //Restart
+
     $(".restartboton").click(function() {
         resetGame();
         $("#winerpopup").css("display", "none");
     });
 
-    function resetGame() {
-        $(".imgcontainer").children('img').attr('src',"Imagenes/white.svg");
-        tablero = [[null,null,null],[null,null,null],[null,null,null]];
-        turno = 1;
-    }
+    
 });

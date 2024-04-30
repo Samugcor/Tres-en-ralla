@@ -1,16 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Tres en ralla</title>
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
+
 <body>
+    <!--Pop up introducir nombres-->
     <div id="nombrespopup" class="backgroundmensaje">
         <div class="containermensaje">
 
@@ -20,15 +25,18 @@
             <label class="color2" for="jugador2"><b>Jugador 2:</b></label>
             <input type="text" id="jugador2" name="jugador2">
 
-            <button id="start" class="restartboton">Start Game</button>
+            <button id="start">Start Game</button>
         </div>
     </div>
 
+    <!--Nombres de jugadores-->
     <div id="head">
         <h1 id="j1" class="color1">Jugador 1</h1>
         <div class="vscontainer"><img src="Imagenes/V__1_-removebg-preview.png" alt=""></div>
         <h1 id="j2" class="color2">Jugador 2</h1>
     </div>
+
+    <!--Tablero-->
     <div id="grid">
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
@@ -42,16 +50,18 @@
 
     </div>
 
+    <!--Resultado pop up-->
     <div id="winerpopup" class="backgroundmensaje">
         <div class="containermensaje">
             <h2 id="felicitaciones">Enhorabuena!</h2>
             <p id="mensaje"></p>
             <button class="restartboton">Restart</button>
         </div>
-        
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>/<!--Metemos jquery-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>/
     <script src="index.js"></script>
 </body>
+
 </html>
