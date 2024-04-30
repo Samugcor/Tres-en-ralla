@@ -7,21 +7,46 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="nombrespopup" class="backgroundmensaje">
+        <div class="containermensaje">
+
+            <label for="jugador1">Jugador 1:</label>
+            <input type="text" id="jugador1" name="jugador1">
+
+            <label for="jugador2">Jugador 2:</label>
+            <input type="text" id="jugador2" name="jugador2">
+
+            <button id="start" class="restartboton">Start Game</button>
+        </div>
+    </div>
+
     <div id="head">
         <h1 id="j1">Jugador 1</h1>
         <h1 id="j2">Jugador 2</h1>
     </div>
     <div id="grid">
-        <div class="imgcontainer"><img src="Imagenes/circle.svg" alt=""></div>
-        <div class="imgcontainer"><img src="Imagenes/circle.svg" alt=""></div>
-        <div class="imgcontainer"><img src="Imagenes/circle.svg" alt=""></div>
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
         <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
-        <div class="imgcontainer"><img src="Imagenes/x.svg" alt=""></div>
-        <div class="imgcontainer"><img src="Imagenes/x.svg" alt=""></div>
-        <div class="imgcontainer"><img src="Imagenes/x.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
+        <div class="imgcontainer"><img src="Imagenes/white.svg" alt=""></div>
 
     </div>
+
+    <div class="backgroundmensaje">
+        <div class="containermensaje">
+            <h2>Winner!</h2>
+            <p id="mensaje"></p>
+            <button class="restartboton">Restart</button>
+        </div>
+        
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>/<!--Metemos jquery-->
+    <script src="index.js"></script>
 </body>
 </html>
